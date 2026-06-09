@@ -1,29 +1,33 @@
 from core.analyzer import CodeAnalyzer
-from core.fixer import CodeFixer
-from core.generator import CodeGenerator
-
+from core.javascript_analyzer import JavaScriptAnalyzer
+from core.cpp_analyzer import CppAnalyzer
+from language_manager import LanguageManager
 
 def main():
-    print("🛠 Добро пожаловать в Coder — ваш удобный ИИ для работы с кодом!")
+    lang = input("Choose language (en/ru): ").lower()
+    lm = LanguageManager(lang)
 
-    # Пример входных данных
-    sample_code = '''
-def add(a, b)
-    return a + b
-    '''
+    print(lm.translate("welcome"))
 
-    print("⚙️ Анализируем код...")
-    issues = CodeAnalyzer.analyze_code(sample_code)
-    print("🚩 Найдены проблемы:", issues)
+    code_type = input("Select code type (python/js/cpp): ").lower()
 
-    print("🔧 Исправляем код...")
-    fixed_code = CodeFixer.fix_code(sample_code, issues)
-    print("✅ Исправленный код:\n", fixed_code)
+    if code_type == "python":
+        code = input(lm.translate("analyze_prompt") + "\n")
+        issues = CodeAnalyzer.analyze_code(code)
+        if issues:
+            print(lm.translate("error_found"), issues)
+        else:
+            print(lm.translate("no_errors"))
 
-    print("✨ Генерируем улучшения...")
-    improved_code = CodeGenerator.improve_code(fixed_code)
-    print("🚀 Улучшенный код:\n", improved_code)
+    elif code_type == "js":
+        code = input("Enter JavaScript code:\n")
+        result = JavaScriptAnalyzer.analyze_js(code)
+        print(result)
 
+    elif code_type == "cpp":
+        code = input("Enter C++ code:\n")
+        result = CppAnalyzer.analyze_cpp(code)
+        print(result)
 
 if __name__ == "__main__":
     main()
