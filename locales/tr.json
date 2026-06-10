@@ -1,0 +1,6 @@
+{
+  "welcome": "Hoş geldiniz!",
+  "analyze_prompt": "Analiz edilecek kodu girin:",
+  "error_found": "Hatalar bulundu:",
+  "no_errors": "Herhangi bir hata tespit edilmedi."
+}

@@ -1,0 +1,6 @@
+{
+  "welcome": "Välkommen!",
+  "analyze_prompt": "Ange koden som ska analyseras:",
+  "error_found": "Fel hittades:",
+  "no_errors": "Inga fel upptäcktes."
+}
