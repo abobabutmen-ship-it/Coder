@@ -1,3 +1,7 @@
+from core.analyzer import CodeAnalyzer
+from core.fixer import CodeFixer
+from core.generator import CodeGenerator
+
 def interactive_mode():
     while True:
         print("\nЧто вы хотите сделать?")

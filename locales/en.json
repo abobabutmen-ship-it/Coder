@@ -1,10 +1,6 @@
 {
-    "welcome": "Welcome to Coder!",
-    "analyze_prompt": "Enter your code to analyze:",
-    "error_found": "Errors found:",
-    "no_errors": "No errors detected.",
-    "style_prompt": "Enter your code to check its style:",
-    "style_passed": "Code style meets the requirements!",
-    "style_failed": "Style issues detected:",
-    "choose_language": "Choose language (en/ru):"
+  "welcome": "Welcome!",
+  "analyze_prompt": "Enter code to analyze:",
+  "error_found": "Errors found:",
+  "no_errors": "No errors detected."
 }

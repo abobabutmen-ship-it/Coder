@@ -1,14 +1,8 @@
-import unittest
 from core.analyzer import CodeAnalyzer
 
-class TestCodeAnalyzer(unittest.TestCase):
-    def test_valid_code(self):
-        code = "def add(a, b):\n    return a + b"
-        self.assertEqual(CodeAnalyzer.analyze_code(code), [])
+def test_valid_python_code():
+    assert CodeAnalyzer.analyze_code("a = 1\n") == []
 
-    def test_invalid_code(self):
-        code = "def add(a, b)\n    return a + b"
-        self.assertTrue(len(CodeAnalyzer.analyze_code(code)) > 0)
-
-if __name__ == "__main__":
-    unittest.main()
+def test_syntax_error_reported():
+    res = CodeAnalyzer.analyze_code("def )")
+    assert isinstance(res, list) and len(res) >= 1
