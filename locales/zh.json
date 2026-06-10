@@ -1,0 +1,6 @@
+{
+  "welcome": "欢迎！",
+  "analyze_prompt": "请输入要分析的代码：",
+  "error_found": "发现错误：",
+  "no_errors": "未发现错误。"
+}

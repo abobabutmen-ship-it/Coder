@@ -1,0 +1,6 @@
+{
+  "welcome": "환영합니다!",
+  "analyze_prompt": "분석할 코드를 입력하세요:",
+  "error_found": "오류 발견:",
+  "no_errors": "오류가 발견되지 않았습니다."
+}

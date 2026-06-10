@@ -1,0 +1,6 @@
+{
+  "welcome": "Willkommen!",
+  "analyze_prompt": "Geben Sie den zu analysierenden Code ein:",
+  "error_found": "Fehler gefunden:",
+  "no_errors": "Keine Fehler gefunden."
+}
