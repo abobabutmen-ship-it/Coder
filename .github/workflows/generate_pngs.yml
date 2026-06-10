@@ -15,32 +15,57 @@ jobs:
 
       - name: Install rsvg-convert
         run: |
+          set -e
           sudo apt-get update
           sudo apt-get install -y librsvg2-bin git
 
       - name: Convert logo to PNG (256x256)
         run: |
+          set -e
           mkdir -p assets/png
           if [ -f assets/logo.svg ]; then
-            rsvg-convert -w 256 -h 256 assets/logo.svg -o assets/png/logo-256.png || true
+            rsvg-convert -w 256 -h 256 assets/logo.svg -o assets/png/logo-256.png
+          else
+            echo "assets/logo.svg not found"
           fi
 
       - name: Convert banner to PNG (800x200)
         run: |
+          set -e
           if [ -f assets/banner.svg ]; then
-            rsvg-convert -w 800 -h 200 assets/banner.svg -o assets/png/banner-800x200.png || true
+            rsvg-convert -w 800 -h 200 assets/banner.svg -o assets/png/banner-800x200.png
+          else
+            echo "assets/banner.svg not found"
           fi
 
       - name: Convert social preview to PNG (1200x630)
         run: |
+          set -e
           if [ -f assets/social_preview.svg ]; then
-            rsvg-convert -w 1200 -h 630 assets/social_preview.svg -o assets/png/social-1200x630.png || true
+            rsvg-convert -w 1200 -h 630 assets/social_preview.svg -o assets/png/social-1200x630.png
+          else
+            echo "assets/social_preview.svg not found"
           fi
 
-      - name: Commit and push PNGs
+      - name: List generated files
         run: |
+          ls -la assets/png || echo "no pngs"
+
+      - name: Upload PNGs as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: generated-pngs
+          path: assets/png
+
+      - name: Commit and push PNGs (if any)
+        run: |
+          set -e
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/png || true
-          git commit -m "chore(assets): add generated PNGs from SVGs" || echo "no changes to commit"
-          git push origin HEAD:feat/logo || true
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(assets): add generated PNGs from SVGs"
+            git push origin HEAD:feat/logo
+          else
+            echo "No generated PNGs to commit"
+          fi

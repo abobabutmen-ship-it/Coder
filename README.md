@@ -40,9 +40,11 @@ inkscape assets/logo.svg --export-type=png --export-width=256 --export-filename=
 
 - Ветка feat/logo содержит workflow `.github/workflows/generate_pngs.yml`, который при пуше в ветку `feat/logo` попытается сгенерировать PNG-версии и запушить их обратно в ту же ветку.
 
+<!-- png-trigger: request-run -->
+
 Локализации (locales)
 
-- В каталоге `locales/` добавлены переводы для языков: en, ru, es, zh, fr, de, pt, ja, ko, ar.
+- В каталоге `locales/` добавлены переводы для языков: en, ru, es, zh, fr, de, pt, ja, ko, ar, hi, it, nl, tr, vi, sv, pl, uk, bn.
 - Пример использования:
 
 ```python
