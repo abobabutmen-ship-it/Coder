@@ -1,3 +1,5 @@
+<img src="assets/png/logo-minimal-128.png" alt="Coder logo" width="128" />
+
 ![Coder banner](assets/banner.svg)
 
 # Coder
@@ -38,7 +40,7 @@ inkscape assets/logo.svg --export-type=png --export-width=256 --export-filename=
 
 Автоматическая генерация PNG в репозитории
 
-- Ветка feat/logo содержит workflow `.github/workflows/generate_pngs.yml`, который при пуше в ветку `feat/logo` попытается сгенерировать PNG-версии и запушить их обратно в ту же ветку.
+- Ветка feat/logo содержит workflow `.github/workflows/generate_pngs.yml`, который при пуше в ветку `feat/logo` попытается сгенерировать PNG[...]
 
 <!-- png-trigger: request-run -->
 
