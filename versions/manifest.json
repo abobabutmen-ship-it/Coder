@@ -1,0 +1,30 @@
+[
+  {
+    "version": "0.1.0",
+    "date": "2026-06-21",
+    "changelog": "Initial release with CLI, analyzers and basic infra.",
+    "characteristics": {
+      "supported_langs": ["py", "js", "cpp"],
+      "features": ["analyze","fix","improve","api"],
+      "size": "small",
+      "breaking_changes": false
+    },
+    "assets": [
+      {"name": "coder-0.1.0-source.zip", "path": "versions/artifacts/coder-0.1.0-source.zip", "checksum": "", "size": 1024, "platform": "source"}
+    ]
+  },
+  {
+    "version": "0.1.1",
+    "date": "2026-06-22",
+    "changelog": "Quick-wins: formatting, diff util, caching and modes support.",
+    "characteristics": {
+      "supported_langs": ["py", "js", "cpp"],
+      "features": ["formatting","diff","caching","modes"],
+      "size": "small",
+      "breaking_changes": false
+    },
+    "assets": [
+      {"name": "coder-0.1.1-source.zip", "path": "versions/artifacts/coder-0.1.1-source.zip", "checksum": "", "size": 2048, "platform": "source"}
+    ]
+  }
+]
